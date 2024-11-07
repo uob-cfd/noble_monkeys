@@ -99,6 +99,7 @@ def crosstab(*args, levels=None):
            [1, 4, 0, 1],
            [0, 3, 0, 3]])
     """
+    import numpy as np
     if len(args) == 0:
         raise TypeError("At least one input sequence is required.")
 

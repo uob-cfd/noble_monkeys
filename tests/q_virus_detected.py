@@ -7,8 +7,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'virus_detected'
-          >>> 'virus_detected' in vars()
-          True
+          >>> assert 'virus_detected' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -17,40 +16,35 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'virus_detected'
           >>> # from its initial state (of ...)
-          >>> virus_detected is not ...
-          True
+          >>> assert virus_detected is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> len(virus_detected)
-          16
+          >>> assert len(virus_detected) == 16
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> set(virus_detected) == {'Yes', 'No'}
-          True
+          >>> assert set(virus_detected) == {'Yes', 'No'}
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> isinstance(virus_detected, np.ndarray)
-          True
+          >>> assert isinstance(virus_detected, np.ndarray)
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.count_nonzero(virus_detected == 'Yes')
-          6
+          >>> assert np.count_nonzero(virus_detected == 'Yes') == 6
           """,
           'hidden': False,
           'locked': False

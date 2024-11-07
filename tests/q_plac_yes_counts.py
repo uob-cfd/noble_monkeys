@@ -8,8 +8,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'plac_yes_counts'
-          >>> 'plac_yes_counts' in vars()
-          True
+          >>> assert 'plac_yes_counts' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -18,48 +17,42 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'plac_yes_counts'
           >>> # from its initial state (of ...)
-          >>> plac_yes_counts is not ...
-          True
+          >>> assert plac_yes_counts is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> len(plac_yes_counts)
-          1000
+          >>> assert len(plac_yes_counts) == 1000
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.all(plac_yes_counts >= 0)
-          True
+          >>> assert np.all(plac_yes_counts >= 0)
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.all(plac_yes_counts <= 8)
-          True
+          >>> assert np.all(plac_yes_counts <= 8)
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> 2.89 < np.mean(plac_yes_counts) < 3.12
-          True
+          >>> assert 2.89 < np.mean(plac_yes_counts) < 3.12
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> 0.94 < np.std(plac_yes_counts) < 1.062
-          True
+          >>> assert 0.94 < np.std(plac_yes_counts) < 1.062
           """,
           'hidden': False,
           'locked': False

@@ -8,8 +8,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'p_ge_observed'
-          >>> 'p_ge_observed' in vars()
-          True
+          >>> assert 'p_ge_observed' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -18,24 +17,21 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'p_ge_observed'
           >>> # from its initial state (of ...)
-          >>> p_ge_observed is not ...
-          True
+          >>> assert p_ge_observed is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> 0 <= p_ge_observed <= 1
-          True
+          >>> assert 0 <= p_ge_observed <= 1
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> p_ge_observed <= 0.01
-          True
+          >>> assert p_ge_observed <= 0.01
           """,
           'hidden': False,
           'locked': False
